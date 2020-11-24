@@ -40,6 +40,11 @@
 ---
 ### 2) 어느쪽으로 갈지 정하기 / 시작점-도착점 간 높이의 차이가 5이상나면 서있고, 아니면 움직임 
 
+
+    # position 
+
+    start_position = [0,0]
+
     def Move_or_Stay(start_point,end_point): #get parameter point instance
         if(end_point.y < 0) :
             print("Cant go down to the surface")
@@ -47,22 +52,22 @@
             if(abs(start_point.State() - end_point.State()) >= 5) :
                 print("You can't move to up because it is so high")
             else :
-                start_point = end_point
+                start_position[1] += 1
         elif(end_point.y < start_point.y) : 
             if(abs(start_point.State() - end_point.State()) >= 5) :
                 print("You can't move to down because it is so high")
             else :
-                start_point = end_point
+                start_position[1] -= 1
         elif(end_point.x < start_point.x) : 
             if(abs(start_point.State() - end_point.State()) >= 5) :
                 print("You can't move to left because it is so high")
             else :
-                start_point = end_point
+                start_position[0] -= 1
         elif(end_point.x > start_point.x) : 
             if(abs(start_point.State() - end_point.State()) >= 5) :
                 print("You can't move to right because it is so high")
             else :
-               start_point = end_point
+               start_position[0] += 1
 ---
 # Grid world 
 
