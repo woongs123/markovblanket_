@@ -98,3 +98,6 @@ class point():
     Cant go down to the surface
     You can't move to left because it is so high
     You can't move to right because it is so high
+    
+# 문제의 결론 
+    시작점에서 어느곳도 가지 못한다
