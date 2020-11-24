@@ -94,3 +94,7 @@ class point():
 ---    
 # Result
  
+    You can't move to up because it is so high
+    Cant go down to the surface
+    You can't move to left because it is so high
+    You can't move to right because it is so high
