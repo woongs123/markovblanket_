@@ -67,3 +67,30 @@ class point():
 # Grid world 
 
 
+![grid](https://user-images.githubusercontent.com/74387174/100055075-9f5ac500-2e66-11eb-9197-56fd5336b557.PNG)
+
+    Grid world  definition
+    start = [0,0]
+    up_move = [0,1]
+    down_move = [0,-1]
+    left_move =[-1,0]
+    rigth_move =[1,0]
+    
+# Test
+    from IPython.core.interactiveshell import InteractiveShell
+    InteractiveShell.ast_node_interactivity = "all"
+
+    #Start to up (0,0) -> (0,1)
+    Move_or_Stay(point(start),point(up_move))
+
+    #Start to down (0,0) -> (0,-1)
+    Move_or_Stay(point(start),point(down_move))
+
+    #Start to left (0,0) -> (-1,0)
+    Move_or_Stay(point(start),point(left_move))
+
+    #Start to right (0,0) -> (1,0)
+    Move_or_Stay(point(start),point(rigth_move))
+    
+# Result
+ 
