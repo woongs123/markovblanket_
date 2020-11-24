@@ -26,7 +26,7 @@ class point():
         self.zy = self.y - sign(self.y)
         
         #Entropy and Height state
-        if(self.x==0 | self.y==0):
+        if(self.x==0 and self.y==0):
             self.entropy = 12
             self.height = 10
         else :
@@ -77,7 +77,7 @@ start = [0,0]
 up_move = [0,1]
 down_move = [0,-1]
 left_move =[-1,0]
-rigth_move =[1,0]
+right_move =[1,0]
 
 
 # In[83]:
@@ -96,5 +96,5 @@ Move_or_Stay(point(start),point(down_move))
 Move_or_Stay(point(start),point(left_move))
 
 #Start to right (0,0) -> (1,0)
-Move_or_Stay(point(start),point(rigth_move))
+Move_or_Stay(point(start),point(right_move))
 
