@@ -30,36 +30,36 @@ class point():
 
 # Sign 함수 구현
 
-def sign(x) :
-    if x>0 :
-        return 1
-    elif x==0 :
-        return 0
-    else :
-        return -1
+    def sign(x) :
+        if x>0 :
+            return 1
+        elif x==0 :
+            return 0
+        else :
+            return -1
 
 # 어느쪽으로 갈지 정하고, 높이의 차이가 5이상나면 서있고, 아니면 움직임 
 
-def Move_or_Stay(start_point,end_point): #get parameter point instance
-    if(end_point.y < 0) :
-        print("Cant go down to the surface")
-    elif(end_point.y > start_point.y) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to up because it is so high")
-        else :
-            x = y
-    elif(end_point.y < start_point.y) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to down because it is so high")
-        else :
-            x = y
-    elif(end_point.x < start_point.x) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to left because it is so high")
-        else :
-            x = y
-    elif(end_point.x > start_point.x) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to right because it is so high")
-        else :
-            x = y
+    def Move_or_Stay(start_point,end_point): #get parameter point instance
+        if(end_point.y < 0) :
+            print("Cant go down to the surface")
+        elif(end_point.y > start_point.y) : 
+            if(abs(start_point.State() - end_point.State()) >= 5) :
+                print("You can't move to up because it is so high")
+            else :
+                x = y
+        elif(end_point.y < start_point.y) : 
+            if(abs(start_point.State() - end_point.State()) >= 5) :
+                print("You can't move to down because it is so high")
+            else :
+                x = y
+        elif(end_point.x < start_point.x) : 
+            if(abs(start_point.State() - end_point.State()) >= 5) :
+                print("You can't move to left because it is so high")
+            else :
+                x = y
+        elif(end_point.x > start_point.x) : 
+            if(abs(start_point.State() - end_point.State()) >= 5) :
+                print("You can't move to right because it is so high")
+            else :
+                x = y
