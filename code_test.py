@@ -19,11 +19,15 @@ class point():
     def __init__(self,grid_point): #2-d array world
         self.x += grid_point[0]
         self.y += grid_point[1]
+        print(self.x)
+        print(self.y)
 
     def State(self) : #return its Height 
         #Z-point
         self.zx = self.x - sign(self.x)
         self.zy = self.y - sign(self.y)
+        print(self.zx)
+        print(self.zy)
         
         #Entropy and Height state
         if(self.x==0 and self.y==0):
@@ -31,7 +35,9 @@ class point():
             self.height = 10
         else :
             self.entropy = ((self.zx + self.entropy) * (20151123 + self.zy) + 20200728) % 20201117
+            print(self.entropy)
             self.height = self.height + 7 - (self.entropy % 15)
+            print(self.height)
         return self.height
     
 def sign(x) :
@@ -42,36 +48,6 @@ def sign(x) :
     else :
         return -1
 
-def Move_or_Stay(start_point,end_point): #get parameter point instance
-    if(end_point.y < 0) :
-        print("Cant go down to the surface")
-    elif(end_point.y > start_point.y) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to up because it is so high")
-        else :
-            start_point = end_point
-    elif(end_point.y < start_point.y) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to down because it is so high")
-        else :
-            start_point = end_point
-    elif(end_point.x < start_point.x) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to left because it is so high")
-        else :
-            start_point = end_point
-    elif(end_point.x > start_point.x) : 
-        if(abs(start_point.State() - end_point.State()) >= 5) :
-            print("You can't move to right because it is so high")
-        else :
-            start_point = end_point
-
-
-# ![grid.PNG](attachment:grid.PNG)
-
-# In[81]:
-
-
 # Grid world  definition
 start = [0,0]
 up_move = [0,1]
@@ -79,22 +55,30 @@ down_move = [0,-1]
 left_move =[-1,0]
 right_move =[1,0]
 
+# position 
 
-# In[83]:
+start_position = [0,0]
 
-
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all"
-
-#Start to up (0,0) -> (0,1)
-Move_or_Stay(point(start),point(up_move))
-
-#Start to down (0,0) -> (0,-1)
-Move_or_Stay(point(start),point(down_move))
-
-#Start to left (0,0) -> (-1,0)
-Move_or_Stay(point(start),point(left_move))
-
-#Start to right (0,0) -> (1,0)
-Move_or_Stay(point(start),point(right_move))
-
+def Move_or_Stay(start_point,end_point): #get parameter point instance
+    if(end_point.y < 0) :
+        print("Cant go down to the surface")
+    elif(end_point.y > start_point.y) : 
+        if(abs(start_point.State() - end_point.State()) >= 5) :
+            print("You can't move to up because it is so high")
+        else :
+            start_position[1] += 1
+    elif(end_point.y < start_point.y) : 
+        if(abs(start_point.State() - end_point.State()) >= 5) :
+            print("You can't move to down because it is so high")
+        else :
+            start_position[1] -= 1
+    elif(end_point.x < start_point.x) : 
+        if(abs(start_point.State() - end_point.State()) >= 5) :
+            print("You can't move to left because it is so high")
+        else :
+            start_position[0] -= 1
+    elif(end_point.x > start_point.x) : 
+        if(abs(start_point.State() - end_point.State()) >= 5) :
+            print("You can't move to right because it is so high")
+        else :
+           start_position[0] += 1
