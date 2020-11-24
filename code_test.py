@@ -49,22 +49,22 @@ def Move_or_Stay(start_point,end_point): #get parameter point instance
         if(abs(start_point.State() - end_point.State()) >= 5) :
             print("You can't move to up because it is so high")
         else :
-            x = y
+            start_point = end_point
     elif(end_point.y < start_point.y) : 
         if(abs(start_point.State() - end_point.State()) >= 5) :
             print("You can't move to down because it is so high")
         else :
-            x = y
+            start_point = end_point
     elif(end_point.x < start_point.x) : 
         if(abs(start_point.State() - end_point.State()) >= 5) :
             print("You can't move to left because it is so high")
         else :
-            x = y
+            start_point = end_point
     elif(end_point.x > start_point.x) : 
         if(abs(start_point.State() - end_point.State()) >= 5) :
             print("You can't move to right because it is so high")
         else :
-            x = y
+            start_point = end_point
 
 
 # ![grid.PNG](attachment:grid.PNG)
