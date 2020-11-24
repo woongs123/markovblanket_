@@ -38,7 +38,7 @@ class point():
         else :
             return -1
 ---
-#### 2) 어느쪽으로 갈지 정하기 / 시작점-도착점 간 높이의 차이가 5이상나면 서있고, 아니면 움직임 
+## 2) 어느쪽으로 갈지 정하기 / 시작점-도착점 간 높이의 차이가 5이상나면 서있고, 아니면 움직임 
 
     def Move_or_Stay(start_point,end_point): #get parameter point instance
         if(end_point.y < 0) :
