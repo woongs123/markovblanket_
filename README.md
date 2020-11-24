@@ -1,6 +1,6 @@
 # 클래스 Point 구현
 
-class point():
+    class point():
     
     # initial state
     x = 0
