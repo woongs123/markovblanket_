@@ -27,7 +27,7 @@ class point():
             self.entropy = ((self.zx + self.entropy) * (20151123 + self.zy) + 20200728) % 20201117
             self.height = self.height + 7 - (self.entropy % 15)
         return self.height
-
+---
 # Sign 함수 구현
 
     def sign(x) :
@@ -37,7 +37,7 @@ class point():
             return 0
         else :
             return -1
-
+---
 # 2) 어느쪽으로 갈지 정하기 / 시작점-도착점 간 높이의 차이가 5이상나면 서있고, 아니면 움직임
 
     def Move_or_Stay(start_point,end_point): #get parameter point instance
@@ -63,7 +63,7 @@ class point():
                 print("You can't move to right because it is so high")
             else :
                 x = y
-
+---
 # Grid world 
 
 
@@ -75,7 +75,7 @@ class point():
     down_move = [0,-1]
     left_move =[-1,0]
     rigth_move =[1,0]
-    
+---   
 # Test
     from IPython.core.interactiveshell import InteractiveShell
     InteractiveShell.ast_node_interactivity = "all"
@@ -91,6 +91,6 @@ class point():
 
     #Start to right (0,0) -> (1,0)
     Move_or_Stay(point(start),point(rigth_move))
-    
+---    
 # Result
  
